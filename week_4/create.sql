@@ -7,7 +7,9 @@ CREATE TABLE category(
 CREATE TABLE product(
 	prid serial PRIMARY KEY,
 	name varchar(30) NOT NULL,
-	quantity int NOT NULL
+	quantity int NOT NULL,
+	category_id int REFERENCES category(ct_id),
+	deliver_id int REFERENCES deliver(dv_id)
 );
 
 CREATE TABLE deliver(
